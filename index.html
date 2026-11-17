@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon espace de français | A1.1</title>
+
+<style>
+:root {
+  --jaune: #FFCF56;
+  --corail: #FF8066;
+  --turquoise: #5CBCC5;
+  --creme: #F8F4E9;
+  --bleu: #253A53;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--creme);
+  color: var(--bleu);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--bleu);
+  color: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 75px 8%;
+  text-align: center;
+  background: var(--jaune);
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  font-size: 18px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--bleu);
+  color: white;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+section {
+  padding: 55px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 4px 15px #253a5310;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin: 12px 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--bleu);
+  font-weight: bold;
+}
+
+.yellow { border-top: 7px solid var(--jaune); }
+.coral { border-top: 7px solid var(--corail); }
+.turquoise { border-top: 7px solid var(--turquoise); }
+.blue { border-top: 7px solid var(--bleu); }
+
+.quiz {
+  background: white;
+  max-width: 650px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 18px;
+}
+
+.quiz button.option {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin: 12px 0;
+  border: 2px solid var(--turquoise);
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--bleu);
+  text-align: left;
+  font-size: 16px;
+}
+
+.quiz button.option:hover {
+  background: #e9f7f7;
+}
+
+#feedback {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.assistant {
+  background: var(--turquoise);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.chat-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 120px;
+  margin: 15px 0;
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+footer {
+  background: var(--bleu);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 5px;
+    display: inline-block;
+  }
+
+  .hero {
+    padding: 50px 6%;
+  }
+
+  section {
+    padding: 40px 6%;
+  }
+
+  .chat-form {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🌼 Mon espace de français</div>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#cours">Mes cours</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#assistant">Assistant IA</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+  <h1>Bonjour et bienvenue ! 👋</h1>
+  <p>
+    Apprenons le français ensemble !
+    Découvre, comprends, pratique et progresse
+    à ton rythme.
+  </p>
+  <a href="#cours" class="button">Commencer à apprendre</a>
+</section>
+
+<section id="cours">
+  <div class="section-title">
+    <h2>📚 Mon espace d'apprentissage</h2>
+    <p>Choisis une activité et découvre le français !</p>
+  </div>
+
+  <div class="cards">
+
+    <article class="card yellow">
+      <div style="font-size:35px">📖</div>
+      <h3>Je découvre</h3>
+      <p>Apprends de nouveaux mots et découvre la grammaire française.</p>
+      <a href="#quiz">Découvrir →</a>
+    </article>
+
+    <article class="card coral">
+      <div style="font-size:35px">🎧</div>
+      <h3>Je comprends</h3>
+      <p>Lis de petits textes et entraîne-toi à comprendre le français.</p>
+      <a href="#quiz">Explorer →</a>
+    </article>
+
+    <article class="card turquoise">
+      <div style="font-size:35px">✏️</div>
+      <h3>Je pratique</h3>
+      <p>Fais des exercices et teste tes connaissances avec des quiz.</p>
+      <a href="#quiz">M'entraîner →</a>
+    </article>
+
+    <article class="card blue">
+      <div style="font-size:35px">💬</div>
+      <h3>Je communique</h3>
+      <p>Apprends à te présenter et à communiquer dans la vie quotidienne.</p>
+      <a href="#assistant">Pratiquer →</a>
+    </article>
+
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="section-title">
+    <h2>🎯 Mon premier quiz A1.1</h2>
+    <p>Choisis la bonne réponse !</p>
+  </div>
+
+  <div class="quiz">
+    <h3>Comment dit-on « Hello » en français ?</h3>
+
+    <button class="option" onclick="checkAnswer(false)">
+      A. Au revoir
+    </button>
+
+    <button class="option" onclick="checkAnswer(true)">
+      B. Bonjour
+    </button>
+
+    <button class="option" onclick="checkAnswer(false)">
+      C. Merci
+    </button>
+
+    <p id="feedback" aria-live="polite"></p>
+  </div>
+</section>
+
+<section id="assistant">
+  <div class="section-title">
+    <h2>🤖 Mon assistant de français</h2>
+    <p>Un compagnon pour t'aider à apprendre !</p>
+  </div>
+
+  <div class="assistant">
+    <h3>Bonjour ! Je suis ton assistant de français.</h3>
+    <p>Tu peux me poser une question sur le français.</p>
+
+    <div class="chat-box" id="chat" aria-live="polite">
+      <p><strong>Assistant :</strong> Bonjour ! Comment puis-je t'aider ? 😊</p>
+    </div>
+
+    <form class="chat-form" id="chatForm">
+      <input
+        type="text"
+        id="question"
+        placeholder="Écris ta question..."
+        aria-label="Ta question"
+        required
+      >
+      <button class="button" type="submit">Envoyer</button>
+    </form>
+    <p style="font-size:12px; margin-top:12px;">
+      Version de démonstration : la connexion à une véritable IA
+      sera ajoutée dans une prochaine étape.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🌼 Mon espace de français | Niveau A1.1</p>
+  <p>Apprendre le français avec plaisir !</p>
+</footer>
+
+<script>
+function checkAnswer(correct) {
+  const feedback = document.getElementById("feedback");
+
+  if (correct) {
+    feedback.textContent = "🎉 Bravo ! La bonne réponse est Bonjour !";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "😊 Essaie encore ! Cherche une autre réponse.";
+    feedback.style.color = "#FF8066";
+  }
+}
+
+document.getElementById("chatForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const input = document.getElementById("question");
+  const chat = document.getElementById("chat");
+  const question = input.value.trim();
+
+  if (!question) return;
+
+  const studentMessage = document.createElement("p");
+  studentMessage.style.marginBottom = "12px";
+  studentMessage.textContent = "Toi : " + question;
+  chat.appendChild(studentMessage);
+
+  const assistantMessage = document.createElement("p");
+  assistantMessage.innerHTML = "<strong>Assistant :</strong> ";
+  assistantMessage.appendChild(
+    document.createTextNode(
+      "Merci pour ta question ! 😊 Mon assistant intelligent sera bientôt connecté. En attendant, continue à explorer les activités du site !"
+    )
+  );
+
+  chat.appendChild(assistantMessage);
+  input.value = "";
+});
+</script>
+
+</body>
+</html>
